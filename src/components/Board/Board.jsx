@@ -51,6 +51,17 @@ const Board = () => {
 
     const winPrompt = winner ? (
         <div className="board__winner">
+            <div 
+              className={
+                winner=== 'No one'
+                  ? "board__winner--msg board__winner--draw":"board__winner--msg"
+              }
+            >
+              {winner === "No one"
+                 ? "Its a Draw!"
+                 : '${winner} has won the game!'}
+            </div>     
+                 
             <div className="board__winner--msg">{winner} has won the game!</div>
             <div className="board__winner--choice">
                 Would you like to have another go?
